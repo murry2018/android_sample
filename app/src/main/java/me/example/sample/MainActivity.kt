@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+        // fab 를 클릭하면 sms 를 발송하는 intent 를 실행한다.
         fab.setOnClickListener {
             val message = contents.text.toString()
             val intent = Intent(Intent.ACTION_VIEW).apply {
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Go 버튼을 누르면 Snackbar 를 연다.
         button_go.setOnClickListener { view ->
             Snackbar.make(view, contents.text, Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show()
